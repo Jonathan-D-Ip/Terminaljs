@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <title>Terminal.js</title>
+    <style>
+      body {
+        background: black;
+        color:      white;
+
+        width:  100%;
+        height: 100%;
+
+        padding: 0;
+        margin:  0;
+
+        box-sizing: border-box;
+        padding-left: 1%;
+      }
+
+      h1.Banner {
+        text-align: center;
+        font-family:monospace;
+        user-select:none;
+        text-align: center;
+      }
+
+      p.CommandLine {
+        width: 100%;
+        max-width: 100%;
+
+      }
+
+      span.prompt {
+        float: left;
+        background: #000000;
+        font-family: monospace;
+        user-select:none;
+      }
+
+      span.input {
+        float: left;
+        background: #000000;
+        min-width: 5em;
+        height: 1em;
+        display:inline-block;
+        padding-left: 10px;
+        outline:none;
+        border: none;
+        font-family: monospace;
+        user-select:none;
+      }
+
+      span.stdOup {
+        font-family: monospace;
+      }
+
+      #terminal.p {
+        margin:     0;
+        padding:    0;
+        font-family: monospace;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <h1 id="Banner" class="Banner" title="Banner">Terminal.js</h1>
+    <p style="font-family:monospace">Type 'help' to get started.</br>Press the banner to reset the cursor.</p>
+
+    <div id="terminal">
+      <p id="cli_0" class="CommandLine">
+        <span class="prompt"><content>D4Daniel</content> :: </span>
+        <span contenteditable="true" class="input"> </span><br>
+      </p>
+      <span class="stdOup"></span>
+    </div>
+    <span class="canvas"></span>
+
+    <script src="./Default.js"></script>
+    <script src="./terminal.js"></script>
+    <script>
+
+      var terminal = document.getElementById("terminal")
+      var template = document.getElementById("cli_0")
+      var body = document.getElementsByTagName("BODY")[0];
+      var banner = document.getElementById("Banner")
+      var stdOup = document.getElementsByClassName("stdOup")[0]
+
+      var t = new Terminal("gello World", terminal, template, body, banner, stdOup)
+
+    </script>
+  </body>
+</html>
